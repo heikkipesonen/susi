@@ -1,7 +1,7 @@
 
 .markereditor{
 	width:300px;
-	height: 380px;
+	height: 420px;
 }
 
 .markereditor .nameheader{
@@ -18,20 +18,61 @@
 	border-bottom: 1px solid #252424;
 }
 
+
+.markereditor .input-container{
+	width: 100%;
+	text-align: right;
+	position: relative;
+}
+
+.markereditor .input-container input{
+	width: 60%;
+	margin-left: 10%;
+	margin-right: 10%;
+	display: inline-block;
+	vertical-align: baseline;
+	margin-top: 5px;
+}
+
+.markereditor img.input-icon{
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	vertical-align: top;
+}
+
 .markereditor .nameheader input:hover{
 	background: #eee;
 }
 
 .markereditor .horizontal_selectlist{	
 	width: 100%;
-	height: 128px;
+	height: 72px;
 	overflow-y: scroll;
+	/*
 	background-color: #eee;
--webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
-        
-        box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.6);	
+-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.6);        
+     */
+        box-shadow: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.3);	
 }
 
+.markereditor .latlnginput-container{
+	margin-bottom: 20px;
+}
+
+.markereditor .latlnginput-container p{
+	width: 30%;	
+	display: inline-block;
+	margin: 5px;
+	text-align: right;
+}
+.markereditor .latlnginput-container input{
+	width: 60%;
+	font-size: 10pt;
+	border: none;
+	border-bottom: 1px solid #51b8df;
+	display: inline-block;
+}
 .markereditor .colorlist{
 	margin-top: 20px;
 	height: 58px;
@@ -41,14 +82,30 @@
 	margin-top: 10px;	
 }
 
-
+.markereditor .dropinput-container{
+	width: 100%;
+	
+	text-align: center;
+}
 .markereditor .dropinput{
-	margin-top: 10px;
+	margin-top: 20px;
 	display: inline-block;	
 	width: 96px;
 	height: 96px;
 	border:4px solid #000;
-	margin-left: 39px;
+	margin: 15px;
+	margin-bottom: 25px;
+
+	position: relative;
+}
+
+.dropinput.imageinput:after{
+	position: absolute;
+	top: 0px;
+	left:0px;
+	content:"drag & drop image";
+	font-size: 8pt;
+	color: #444;
 }
 
 .markereditor .dropinput:hover{
@@ -92,7 +149,6 @@
 .horizontal_selectlist ul li{
 	display: inline-block;
 	vertical-align: middle;
-	height: 74px;
 	padding: 0px;
 	margin: 5px;
 	border: 8px solid transparent;

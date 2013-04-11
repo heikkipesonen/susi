@@ -69,7 +69,7 @@ markerList.prototype = {
 	addItem : function(item){
 		var e_item = $('<li>')
 		this._items.push(item);
-		e_item.append('<img width="64px" heigth="64px" src="../'+markerIconsURL+'/'+item.icon.url+'" title="'+item.name+'"></img>')
+		e_item.append('<img width="40px" heigth="40px" src="../'+markerIconsURL+'/'+item.icon.url+'" title="'+item.name+'"></img>')
 		e_item.attr('id',item._id)
 
 		var me = this;

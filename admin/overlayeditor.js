@@ -14,19 +14,19 @@ function overlayEditor(layer){
 
 	this._element = $('<div class="markerEditor" />');
 	this._nametext = $('<div class="nameheader"><input title="name" placeholder="name" name="name" type="text"></input></div>');
-	this._rotationtext = $('<div class="nameheader"><input title="rotation" placeholder="0" name="rotation" type="number"></input></div>');
-	this._opacitytext = $('<div class="nameheader"><input title="opacity" value="100" min="1" max="100" name="opacity" type="number"></input></div>');
+	this._rotationtext = $('<div class="input-container"><img class="input-icon" src="img/rotation.png" /><input class="half" title="rotation" placeholder="0" name="rotation" type="number"></input></div>');
+	this._opacitytext = $('<div class="input-container"><img class="input-icon" src="img/view.png" /><input class="half" title="opacity" value="100" min="1" max="100" name="opacity" type="number"></input></div>');
 
 	this._imageinput = new imgInput();		
 	
 	this._bottomBar = $('<div class="bottombar" />');
 	this.acceptButton = $('<img class="ok button" src="img/check-alt.png"></img>');
-	this.removeButton = $('<img class="delete button" src="img/cancel.png"></img>');
+	this.removeButton = $('<img class="delete button" src="img/trash-empty.png"></img>');
 
 	this._element
 				.append(this._nametext)
-				.append(this._rotationtext)
 				.append(this._opacitytext)
+				.append(this._rotationtext)
 				.append(this._imageinput.element)
 				.append(this._bottomBar);
 

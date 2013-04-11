@@ -13,16 +13,33 @@ function markerEditor(e,layer){
 	this.acceptButton = $('<img class="ok button" src="img/check-alt.png"></img>');
 	this.removeButton = $('<img class="delete button" src="img/trash-empty.png"></img>');
 
+	this._latlnginputContainer = $('<div class="latlnginput-container"></div>');	
+	this._latInput = $('<input type="text" class="latlnginput" />');
+	this._lngInput = $('<input type="text" class="latlnginput" />');
+
+	this._inputContainer = $('<div class="dropinput-container"></div>');
 
 	this._element
 				.append(this._nametext)
+				.append(this._latlnginputContainer
+					.append('<p>Latitude:</p>')
+					.append(this._latInput)
+					.append('<p>Longitude:</p>')
+					.append(this._lngInput)
+				)
 	//			.append(this._colorselect)
 				.append(this._iconselect)
-				.append(this._imageinput.element)
-				.append(this._targetinput.getElement())
+
+				.append(this._inputContainer
+					.append(this._imageinput.element)
+					.append(this._targetinput.getElement())
+				)
+				
 				.append(this._bottomBar);
 
-	this._bottomBar.append(this.acceptButton).append(this.removeButton);
+	this._bottomBar
+			//.append(this.acceptButton)
+			.append(this.removeButton);
 	this._iconList = new markerList();
 	this._iconselect.append(this._iconList.element);
 
@@ -49,6 +66,12 @@ function markerEditor(e,layer){
 	});
 
 	this.setIcon();
+
+	this._element.find('input').on('keyup',function(e){
+		if (e.keyCode == 13){
+			me.setPosition();
+		}
+	});
 }
 
 
@@ -87,6 +110,7 @@ markerEditor.prototype = {
 			this.showItem();
 		}
 
+		this.update();
 	},
 	load:function(data){
 		if (data.type == 'marker'){
@@ -188,7 +212,14 @@ markerEditor.prototype = {
 		return data;		
 	},
 	update:function(){
+		this._latInput.val( this._marker.getLatLng().lat);
+		this._lngInput.val( this._marker.getLatLng().lng);
+	},
+	setPosition:function(){
+		var lat = this._latInput.val();
+		var lng = this._lngInput.val();
 
+		this._marker.setLatLng([lat,lng]);
 	},
 	on:function(name,fn){		
 		if (this._listeners[name] == undefined){
