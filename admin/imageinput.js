@@ -1,6 +1,6 @@
 function imgInput(){
 	this._listeners = [];
-	this.element = $('<img name="image" class="imageinput dropinput" title="select or drop in an image for this place icon"></img>');
+	this.element = $('<img name="image" class="tooltip imageinput dropinput" title="select or drop in an image for this place icon"></img>');
 	var me = this;
 	
 	droppable(this.element,function(e,files){

@@ -99,15 +99,6 @@
 	position: relative;
 }
 
-.dropinput.imageinput:after{
-	position: absolute;
-	top: 0px;
-	left:0px;
-	content:"drag & drop image";
-	font-size: 8pt;
-	color: #444;
-}
-
 .markereditor .dropinput:hover{
 	border: 4px solid #d00;	
 }

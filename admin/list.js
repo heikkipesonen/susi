@@ -123,7 +123,7 @@ list.prototype = {
 					img.attr('src',getImage(item.properties.image));
 				}
 				h.text(getText(item.properties.name));
-				txt.text(getText(item.properties.description));
+				txt.text(getText(item.properties.description) || item.type);
 				imgcell.append(img);
 				cell.append(h).append(txt);
 				

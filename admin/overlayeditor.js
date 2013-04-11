@@ -121,7 +121,7 @@ overlayEditor.prototype  = {
 		if (this._bounds && this._imgurl){
 
 			//this._imgLayer = new L.ImageOverlay(this.getImage(this._imgurl),this._bounds,{opacity:parseInt(this._opacitytext.find('input').val())/100});
-			console.log(this._bounds);
+			//console.log(this._bounds);
 			this._imgLayer = new RotatedImageOverlay(
 											this.getImage(this._imgurl),
 											this._bounds,

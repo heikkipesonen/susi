@@ -81,6 +81,7 @@ var map = function(presentation,opts){
 	this._presentation = presentation; // the presentation in wich this obj is linked to
 
 	if (opts.center == undefined){
+		/*
 		if (navigator.geolocation && opts.maxbounds == undefined){
 			navigator.geolocation.getCurrentPosition(function(position){
 
@@ -94,6 +95,7 @@ var map = function(presentation,opts){
 				me._map.setView([60.24587,25],10)
 			});
 		}
+		*/
 		
 		$.extend(opts, {
 			center:[60.24587,25],

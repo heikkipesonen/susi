@@ -222,7 +222,7 @@ var layerLoader = {
 				divimg = '<img class="marker-icon-image" style="'+css+'" src="'+img+'"></img>';
 			} 
 			
-			var html = '<div style="position:relative;overflow:hidden;background-image:url('+icon.icon.url+'); width:'+icon.icon.size[0]+'px; height:'+icon.icon.size[1]+'px" class="marker-icon-imagecontainer">'+divimg+'</div>';
+			var html = '<div style="position:relative;overflow:hidden;background-image:url('+markerIconsURL+'/'+icon.icon.url+'); width:'+icon.icon.size[0]+'px; height:'+icon.icon.size[1]+'px" class="marker-icon-imagecontainer">'+divimg+'</div>';
 			html += textcontainer;
 
 			if (getText(data.properties.name) != ''){

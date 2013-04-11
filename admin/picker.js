@@ -4,6 +4,7 @@ function picker(opts,callback){
 	this.callback = callback;
 	this.list = $('<ul />');
 	this.setSize(window.innerWidth*0.95,window.innerHeight*0.9);
+
 	this.setPosition('center');
 	
 	this.searchstr = '';
@@ -26,6 +27,10 @@ function picker(opts,callback){
 
 	this.addTool('img/cancel.png','remove','discard');
 
+	this.list.css({
+		'height':this.getInnerSize().height,
+		'overflow-y':'scroll'
+	});
 	this.getList(opts.type);
 	this.applyOverlay();
 	this.show();

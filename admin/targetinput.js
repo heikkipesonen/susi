@@ -6,7 +6,14 @@ function targetDropInput(){
 	
 	this.element.click(function(){
 		//alert('todo')
-		actions.showListWindow();
+		if (!me.target){
+			actions.showListWindow();
+		} else {
+			if (me.target.type =='page'){
+				actions.pageedit(me.target._id);
+			}
+			
+		}
 		return false;
 	});
 

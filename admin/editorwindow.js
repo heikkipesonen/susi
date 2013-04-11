@@ -116,6 +116,16 @@ editorwindow.prototype = {
 			width:width
 		})
 	},
+	getInnerSize:function(){
+		var tb = 0;
+		if (this.toolbar){
+			tb = this.toolbar.height();
+		}
+		return {
+				width:this._container.width(),
+				height:this._container.height()-tb
+			}
+	},
 	setPosition:function(pos){				
 		if (pos.left && pos.top){
 			this._element.css({
